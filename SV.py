@@ -15,25 +15,26 @@ for x in range (Cantidad):
     PrecioU=float(PrecioU)
     if PrecioU>0:
         Precios.append(PrecioU)
-    for x in range(1): 
-       if PrecioU<0:
-            print("El precio no es un valor positivo, por favor ingresar un valor correcto")
-            PrecioU=input("Ingrese el precio unitario ")
-            PrecioU=float(PrecioU)
+    while PrecioU<0: 
+        print("El precio no es un valor positivo, por favor ingresar un valor correcto")
+        PrecioU=input("Ingrese el precio unitario ")
+        PrecioU=float(PrecioU)
+    else:
+         Precios.append(PrecioU)
+        
     
     Pdesc=input("Ingrese el porcentaje de descuento ")
     Pdesc=float(Pdesc)
-    for x in range(1):  
-        if 0<=Pdesc<=100:
-            PorcentajeDes.append(Pdesc)
-    while 0>=Pdesc>=100:
-            print("El valor de descuento es incorrecto, por favor ingresar un valor correcto")
+    if 0<=Pdesc<=100:
+            PorcentajeDes.append(Pdesc)      
+    while Pdesc<0 or Pdesc>100:
+        print("El valor de descuento es incorrecto, por favor ingresar un valor correcto")
+        Pdesc=input("Ingrese el porcentaje de descuento ")
+        Pdesc=float(Pdesc)
+    else:
+         PorcentajeDes.append(Pdesc)
     
+
 print(Productos)
 print(Precios)
 print(PorcentajeDes)
-
-
-
-
-
